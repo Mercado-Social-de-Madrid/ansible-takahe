@@ -1,0 +1,23 @@
+[Unit]
+Description=Takahe gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+Type=notify
+User=juanlu
+Group=juanlu
+# another option for an even more restricted service is
+# DynamicUser=yes
+# see http://0pointer.net/blog/dynamic-users-with-systemd.html
+RuntimeDirectory=gunicorn
+WorkingDirectory=/srv/checkout
+ExecStart={{ venv_path }}/bin/python -u {{ venv_path}}/bin/gunicorn takahe.asgi:application -w 4 -k uvicorn.workers.UvicornWorker
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+EnvironmentFile=/etc/takahe
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+[Unit]
+Description=Takahe stator
+Requires=gunicorn.service
+After=gunicorn.service
+
+[Service]
+Type=simple
+User=juanlu
+Group=juanlu
+WorkingDirectory={{ checkout_path }}
+# Unbuffered output is needed, see https://stackoverflow.com/a/43877901/554319
+ExecStart={{ venv_path }}/bin/python -u manage.py runstator
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+EnvironmentFile=/etc/takahe
+
+[Install]
+WantedBy=multi-user.target

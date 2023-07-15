@@ -1,0 +1,13 @@
+TAKAHE_DATABASE_SERVER="postgres://{{ db_user }}:{{ db_password | urlencode }}@localhost:5432/takahe"
+TAKAHE_SECRET_KEY="{{ takahe_secret_key }}"
+TAKAHE_MAIN_DOMAIN="{{ domain }}"
+TAKAHE_USE_PROXY_HEADERS=true
+TAKAHE_EMAIL_SERVER="{{ takahe_email_server }}"
+TAKAHE_EMAIL_FROM="{{ takahe_admin_email }}"
+TAKAHE_AUTO_ADMIN_EMAIL="{{ takahe_admin_email }}"
+
+TAKAHE_MEDIA_BACKEND="local://"
+TAKAHE_MEDIA_ROOT="/media/takahe/"
+TAKAHE_MEDIA_URL="https://{{ domain }}/media/"
+
+TAKAHE_SENTRY_DSN="{{ sentry_dsn }}"
