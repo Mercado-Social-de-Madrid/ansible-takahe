@@ -1,0 +1,20 @@
+---
+- name: Docker installed
+  hosts: webservers
+  roles:
+    - geerlingguy.docker
+
+- name: SSL certificate installed
+  hosts: webservers
+  become: true
+  vars:
+    certbot_auto_renew_user: juanlu
+    certbot_create_if_missing: true
+    certbot_create_method: standalone
+    certbot_admin_email: "{{ certbot_email }}"
+    certbot_certs:
+      - domains:
+          - "{{ domain }}"
+  roles:
+  - role: geerlingguy.certbot
+    when: skip_ssl|default(false)|bool != true
