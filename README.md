@@ -14,6 +14,7 @@ $ ansible-galaxy install -r requirements.yml
 Verify:
 
 ```
+$ cp hosts.template hosts  # And edit accordingly
 $ ansible all -i hosts -m ping
 ```
 
