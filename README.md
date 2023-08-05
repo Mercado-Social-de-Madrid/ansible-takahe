@@ -30,7 +30,7 @@ $ ansible all -i inventory/production -u root -m ping
 Execute:
 
 ```
-$ ansible-playbook -i inventory/production -u root playbooks/configure.yml
+$ ansible-playbook -i inventory/production -u root configure.yml
 ```
 
 Verify:
