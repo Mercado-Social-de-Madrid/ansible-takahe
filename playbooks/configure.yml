@@ -1,20 +1,25 @@
 ---
-- name: Docker installed
-  hosts: webservers
-  roles:
-    - geerlingguy.docker
-
 - name: SSL certificate installed
   hosts: webservers
+  pre_tasks:
+    # https://github.com/geerlingguy/ansible-role-certbot/issues/21
+    - name: Update apt
+      ansible.builtin.apt:
+        update_cache: true
   become: true
   vars:
     certbot_auto_renew_user: root
     certbot_create_if_missing: true
-    certbot_create_method: standalone
     certbot_admin_email: "{{ certbot_email }}"
     certbot_certs:
       - domains:
           - "{{ domain }}"
   roles:
-    - role: geerlingguy.certbot
-      when: skip_ssl|default(false)|bool != true
+    - geerlingguy.certbot
+  tags:
+    - ssl  # TODO: Find a better name?
+
+- name: Docker installed
+  hosts: webservers
+  roles:
+    - geerlingguy.docker
