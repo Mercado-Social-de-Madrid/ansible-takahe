@@ -1,0 +1,5 @@
+---
+- name: Restart Takahe
+  ansible.builtin.service:
+    name: takahe
+    state: restarted

@@ -4,9 +4,13 @@
     repo: "{{ repository }}"
     version: main
     dest: "{{ checkout_path }}"
+  notify:
+    - Restart Takahe
 
 - name: Copy service definition
   ansible.builtin.template:
     src: takahe.service.j2
     dest: /etc/systemd/system/takahe.service
     mode: u=rw,g=r,o=r
+  notify:
+    - Restart Takahe
