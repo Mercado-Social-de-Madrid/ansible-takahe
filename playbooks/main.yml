@@ -16,5 +16,5 @@
       - domains:
           - "{{ domain }}"
   roles:
-  - role: geerlingguy.certbot
-    when: skip_ssl|default(false)|bool != true
+    - role: geerlingguy.certbot
+      when: skip_ssl|default(false)|bool != true
