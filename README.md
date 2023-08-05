@@ -23,6 +23,7 @@ Test:
 
 ```
 $ cp hosts.template inventory/production  # And edit accordingly
+$ ansible all -i inventory/production --list-hosts
 $ ansible all -i inventory/production -u root -m ping
 ```
 
