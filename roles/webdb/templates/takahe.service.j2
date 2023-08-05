@@ -6,9 +6,9 @@ After=network.target
 Type=simple
 User=root
 Group=root
-WorkingDirectory={{ checkout_path }}
+WorkingDirectory={{ takahe_checkout_path }}
 # Unbuffered output is needed, see https://stackoverflow.com/a/43877901/554319
-ExecStart=docker-compose up
+ExecStart=docker-compose --env-file {{ takahe_env_file }} up
 TimeoutStopSec=10
 
 [Install]

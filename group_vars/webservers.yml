@@ -1,3 +1,5 @@
 ---
-repository: https://github.com/AlbertoMoreta/takahe-docker
-checkout_path: /opt/takahe
+takahe_repository: https://github.com/AlbertoMoreta/takahe-docker
+takahe_checkout_path: /opt/takahe
+takahe_env_file: /etc/takahe
+takahe_service_file: /etc/systemd/system/takahe.service
