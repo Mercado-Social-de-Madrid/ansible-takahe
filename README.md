@@ -20,14 +20,14 @@ Prepare:
 Test:
 
 ```
-$ cp hosts.template hosts  # And edit accordingly
-$ ansible all -i hosts -m ping
+$ cp hosts.template inventory/production  # And edit accordingly
+$ ansible all -i inventory/production -u root -m ping
 ```
 
 Execute:
 
 ```
-$ ansible-playbook -i hosts playbooks/main.yml
+$ ansible-playbook -i inventory/production -u root playbooks/main.yml
 ```
 
 Verify:
