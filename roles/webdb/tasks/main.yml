@@ -1,0 +1,12 @@
+---
+- name: Clone the code from repository
+  ansible.builtin.git:
+    repo: "{{ repository }}"
+    version: main
+    dest: "{{ checkout_path }}"
+
+- name: Copy service definition
+  ansible.builtin.template:
+    src: takahe.service.j2
+    dest: /etc/systemd/system/takahe.service
+    mode: u=rw,g=r,o=r

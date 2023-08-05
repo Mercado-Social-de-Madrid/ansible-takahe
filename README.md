@@ -31,6 +31,7 @@ Execute:
 
 ```
 $ ansible-playbook -i inventory/production -u root configure.yml
+$ ansible-playbook -i inventory/production -u root site.yml
 ```
 
 Verify:

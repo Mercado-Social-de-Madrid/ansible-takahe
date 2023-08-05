@@ -1,1 +1,5 @@
-# TODO: Deployment
+---
+- name: Deploy webserver
+  hosts: webservers
+  roles:
+    - webdb

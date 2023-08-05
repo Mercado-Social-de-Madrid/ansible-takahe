@@ -1,0 +1,15 @@
+[Unit]
+Description=Takahe
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory={{ checkout_path }}
+# Unbuffered output is needed, see https://stackoverflow.com/a/43877901/554319
+ExecStart=docker-compose up
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
