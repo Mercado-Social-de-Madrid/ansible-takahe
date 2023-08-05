@@ -2,6 +2,8 @@
 
 [TBC]
 
+Tested with Ubuntu 22.04.
+
 ## Cheatsheet
 
 Setup:
@@ -13,9 +15,9 @@ $ ansible-galaxy install -r requirements.yml
 
 Prepare:
 
-- Provision machine (tested with Ubuntu 22.04)
-- Open ports 80 and 443
-- Point A DNS record to machine IP
+- Provision machine (no automated provisioning is provided)
+- Open ports 80 and 443 (no automatic firewall configuration is provided)
+- Point A DNS record to machine IP (no automatic DNS configuration is provided)
 
 Test:
 
@@ -27,7 +29,7 @@ $ ansible all -i inventory/production -u root -m ping
 Execute:
 
 ```
-$ ansible-playbook -i inventory/production -u root playbooks/main.yml
+$ ansible-playbook -i inventory/production -u root playbooks/configure.yml
 ```
 
 Verify:
