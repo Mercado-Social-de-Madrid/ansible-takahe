@@ -1,2 +1,13 @@
-[webservers]
-203.0.113.254 domain= certbot_email=
+webservers:
+  hosts:
+    webserver1:
+      ansible_host: 203.0.113.254
+      domain: 
+      certbot_email: 
+      takahe_secret_key: 
+      takahe_email_server: 
+      takahe_admin_email: 
+      takahe_sentry_dsn: 
+      db_name: 
+      db_user: 
+      db_password: 
