@@ -18,6 +18,7 @@ Prepare:
 - Provision machine (no automated provisioning is provided)
 - Open ports 80 and 443 (no automatic firewall configuration is provided)
 - Point A DNS record to machine IP (no automatic DNS configuration is provided)
+- Make sure outgoing SMTP traffic is not blocked (no automatic check is provided)
 
 Test:
 
@@ -36,5 +37,4 @@ $ ansible-playbook -i inventory/production -u root site.yml
 
 Verify:
 
-- Launch an HTTPS server on appropriate port (for example https://gist.github.com/astrojuanlu/13c2803bab300d2a8f0e117475a7a1cc)
 - Point browser to `https://{domain}`
