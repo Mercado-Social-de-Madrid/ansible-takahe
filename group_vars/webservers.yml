@@ -1,5 +1,6 @@
 ---
 takahe_repository: https://github.com/AlbertoMoreta/takahe-docker
 takahe_checkout_path: /opt/takahe
-takahe_env_file: /etc/takahe
+# takahe_env_file: /etc/takahe
+takahe_env_file: "{{ takahe_checkout_path }}/.env"  # Hardcoded in docker-compose
 takahe_service_file: /etc/systemd/system/takahe.service
