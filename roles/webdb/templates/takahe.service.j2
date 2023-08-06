@@ -9,6 +9,7 @@ Group=root
 WorkingDirectory={{ takahe_checkout_path }}
 ExecStartPre=docker compose --env-file {{ takahe_env_file }} run web python3 manage.py migrate
 ExecStart=docker compose --env-file {{ takahe_env_file }} up
+ExecStop=docker compose --env-file {{ takahe_env_file }} down
 TimeoutStopSec=10
 
 [Install]
