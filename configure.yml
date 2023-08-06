@@ -19,7 +19,12 @@
   tags:
     - ssl  # TODO: Find a better name?
 
-- name: Docker installed
+- name: Install Docker and system dependencies
   hosts: webservers
   roles:
     - geerlingguy.docker
+  tasks:
+    - name: Install system dependencies
+      ansible.builtin.package:
+        name:
+          - nginx

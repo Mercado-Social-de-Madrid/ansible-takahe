@@ -1,4 +1,11 @@
 ---
+- name: Restart Nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+    daemon_reload: true
+    enabled: true
+
 - name: Restart Takahe
   ansible.builtin.systemd:
     name: takahe
