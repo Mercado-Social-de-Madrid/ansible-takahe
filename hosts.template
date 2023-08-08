@@ -2,7 +2,8 @@ webservers:
   hosts:
     webserver1:
       ansible_host: 203.0.113.254
-      domain: 
+      takahe_domain: 
+      display_domain: 
       certbot_email: 
       takahe_secret_key: 
       takahe_email_server: 

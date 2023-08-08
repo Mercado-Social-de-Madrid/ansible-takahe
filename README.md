@@ -37,4 +37,4 @@ $ ansible-playbook -i inventory/production -u root site.yml
 
 Verify:
 
-- Point browser to `https://{domain}`
+- Point browser to `https://{takahe_domain}`

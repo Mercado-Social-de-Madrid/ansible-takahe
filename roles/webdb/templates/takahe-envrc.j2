@@ -8,11 +8,11 @@ PGPORT=5432
 # TAKAHE VARIABLES
 TAKAHE_SECRET_KEY="{{ takahe_secret_key }}"
 TAKAHE_MEDIA_BACKEND="local://"
-TAKAHE_MAIN_DOMAIN="{{ domain }}"
+TAKAHE_MAIN_DOMAIN="{{ takahe_domain }}"
 TAKAHE_EMAIL_SERVER="{{ takahe_email_server }}"
 TAKAHE_EMAIL_FROM="{{ takahe_admin_email }}"
 TAKAHE_AUTO_ADMIN_EMAIL="{{ takahe_admin_email }}"
 TAKAHE_USE_PROXY_HEADERS=True
 TAKAHE_MEDIA_ROOT="/media/takahe/"
-TAKAHE_MEDIA_URL="https://{{ domain }}/media/"
+TAKAHE_MEDIA_URL="https://{{ takahe_domain }}/media/"
 TAKAHE_SENTRY_DSN="{{ takahe_sentry_dsn }}"

@@ -13,7 +13,8 @@
     certbot_admin_email: "{{ certbot_email }}"
     certbot_certs:
       - domains:
-          - "{{ domain }}"
+          - "{{ takahe_domain }}"
+          - "{{ display_domain }}"
   roles:
     - geerlingguy.certbot
   tags:
