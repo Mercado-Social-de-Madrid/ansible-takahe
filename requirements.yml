@@ -1,6 +1,7 @@
 collections:
   - name: community.general
   - name: community.postgresql
+  - name: grafana.grafana
 roles:
   - name: geerlingguy.certbot
   - name: geerlingguy.docker
